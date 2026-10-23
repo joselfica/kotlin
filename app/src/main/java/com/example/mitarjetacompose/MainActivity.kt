@@ -1,3 +1,5 @@
+package com.example.mitarjetacompose
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -43,9 +45,9 @@ fun MiTarjetaDePresentacion() {
         Spacer(modifier = Modifier.height(16.dp))
 
         TextField(
-            value = nombre, //Ahora está vinculado a la variable
-            onValueChange = { nombre = it}, //Se actualiza al escribir
-            label = { Text("Escribe tu nombre") }
+            value = nombre, // Ahora está vinculado a la variable
+            onValueChange = { nombre = it }, // Se actualiza al escribir
+            label = { Text ("Escribe tu nombre") }
         )
 
         Spacer(modifier = Modifier.height(16.dp))
