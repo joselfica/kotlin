@@ -20,23 +20,21 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// @Composable indica que esta función es un componente de UI
 @Composable
 fun MiTarjetaDePresentacion() {
-    // Column organiza los elementos de forma vertical
     // Variable de estado: guarda el nombre que escribe el usuario
-    var nombre by remember { mutableSetOf("")}
+    var nombre by remember { mutableStateOf("") }
 
     // Variable de estado: guarda el mensaje de saludo
     var saludo by remember { mutableStateOf("Aquí aparecerá tu saludo") }
+
     Column(
         modifier = Modifier
-            .fillMaxSize() // Ocupa toda la pantalla
-            .padding(24.dp), // Margen interno
-        horizontalAlignment = Alignment.CenterHorizontally, // Centrado horizontal
-        verticalArrangement = Arrangement.Center // Centrado vertical
+            .fillMaxSize()
+            .padding(24.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
     ) {
-        // Aquí iremos agregando los componentes
         Text(
             text = "Tarjeta de Presentación",
             style = MaterialTheme.typography.headlineMedium
@@ -47,7 +45,7 @@ fun MiTarjetaDePresentacion() {
         TextField(
             value = nombre, // Ahora está vinculado a la variable
             onValueChange = { nombre = it }, // Se actualiza al escribir
-            label = { Text ("Escribe tu nombre") }
+            label = { Text("Escribe tu nombre") }
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -62,6 +60,6 @@ fun MiTarjetaDePresentacion() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(text = saludo) // Muestra el saludo actualizado
-
     }
 }
+
